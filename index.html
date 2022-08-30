@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href = "style.css" rel = "stylesheet">
+</head>
+<body>
+    
+  <input type="search" class = "search"> 
+  
+  <div class = "main"></div>
+  <script>
+
+    let search = document.querySelector('.search');
+    search.addEventListener('search',function(){
+        
+    const getw = async() => {
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q='+search.value+'&appid=b190a0605344cc4f3af08d0dd473dd25&units=metric', {mode: 'cors'});
+        const jsonfile = await response.json();
+
+        const div = document.querySelector('.main');
+        div.innerHTML = "";
+        const div2 = document.createElement('div');
+        div2.textContent = "longitude:"+jsonfile.coord.lon;
+        div.appendChild(div2);
+        const div3 = document.createElement('div');
+        div3.textContent = "latitude:"+jsonfile.coord.lat;
+        div.appendChild(div3);
+        const div4 = document.createElement('div');
+        div4.textContent = "Max temp:"+jsonfile.main.temp_max;
+        div.appendChild(div4);
+        const div5 = document.createElement('div');
+        div5.textContent = "Min temp:"+jsonfile.main.temp_min;
+        div.appendChild(div5);
+
+        if(jsonfile.main.temp_max>30)
+        {
+            const bgImage = document.querySelector('body') 
+            bgImage.style.backgroundImage = "url('hot.jpg')"
+            
+        }
+        else if(jsonfile.main.temp_max<0)
+        {
+            const bgImage = document.querySelector('body') 
+            bgImage.style.backgroundImage = "url('cold.jpeg')"
+            
+        }
+        else
+        {
+            const bgImage = document.querySelector('body') 
+            bgImage.style.backgroundImage = "url('good-weather.jpg')"
+            
+        }
+        
+        
+        
+
+        
+        
+        
+    } 
+    getw();
+
+    })
+
+    
+    
+    
+    
+
+  </script>
+</body>
+</html>
+

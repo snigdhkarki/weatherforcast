@@ -1,0 +1,13 @@
+.main{
+    position: relative;
+    top:200px;
+    left: 50vh;
+    font-size:100px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .search{
+    position: relative;
+    left: 50vh;
+  
+  }
