@@ -11,3 +11,15 @@
     left: 50vh;
   
   }
+  .back{
+    background-image: url('./hot.jpg');
+    background-size: cover;
+  }
+  .back1{
+    background-image: url('./cold.jpeg');
+    background-size: cover;
+  }
+  .back2{
+    background-image: url('./good-weather.jpg');
+    background-size: cover;
+  }

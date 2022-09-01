@@ -35,20 +35,24 @@
 
         if(jsonfile.main.temp_max>30)
         {
-            const bgImage = document.querySelector('body') 
-            bgImage.style.backgroundImage = "url('hot.jpg')"
+            const bgImage = document.querySelector('body');
+            bgImage.setAttribute("class","back");
+            
             
         }
         else if(jsonfile.main.temp_max<0)
         {
-            const bgImage = document.querySelector('body') 
-            bgImage.style.backgroundImage = "url('cold.jpeg')"
+          const bgImage = document.querySelector('body');
+            bgImage.setAttribute("class","back1");
+           
+          
             
         }
         else
         {
-            const bgImage = document.querySelector('body') 
-            bgImage.style.backgroundImage = "url('good-weather.jpg')"
+          const bgImage = document.querySelector('body');
+            bgImage.setAttribute("class","back2");
+            
             
         }
         
